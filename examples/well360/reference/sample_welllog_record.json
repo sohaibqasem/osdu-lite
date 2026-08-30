@@ -1,0 +1,34 @@
+[
+  {
+    "id": "company-prod:work-product-component--WellLog:LOG-1001-GR",
+    "kind": "osdu:wks:work-product-component--WellLog:1.4.0",
+    "acl": {
+      "viewers": [
+        "data.well360.viewers@company-prod.company.com"
+      ],
+      "owners": [
+        "data.well360.owners@company-prod.company.com"
+      ]
+    },
+    "legal": {
+      "legaltags": [
+        "<approved-legal-tag-name>"
+      ],
+      "otherRelevantDataCountries": [
+        "SA"
+      ]
+    },
+    "tags": {
+      "source-system": "legacy-log-catalog",
+      "legacy-id": "LOG-1001-GR",
+      "file-format": "LAS 2.0"
+    },
+    "data": {
+      "Name": "FALCON-01-A GR/CALI",
+      "WellboreID": "company-prod:master-data--Wellbore:WB-1001-A",
+      "Datasets": [
+        "company-prod:dataset--File.Generic:LOG-1001-GR-LAS"
+      ]
+    }
+  }
+]

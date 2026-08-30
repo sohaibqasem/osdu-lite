@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  server:
+    name: Server (tests + smoke)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Syntax checks
+        run: |
+          python -m py_compile server/server.py
+          for f in demo-all.sh examples/well360/demo/*.sh server/*.sh examples/well360/client/*.sh; do
+            bash -n "$f" || exit 1
+          done
+
+      - name: Unit tests
+        run: python -m unittest discover -s server/tests -v
+
+      - name: Live smoke test
+        run: |
+          python3 server/server.py &
+          SERVER_PID=$!
+          for i in $(seq 1 30); do
+            if curl -fsS http://localhost:8089/health >/dev/null 2>&1; then
+              break
+            fi
+            sleep 1
+          done
+          server/smoke-test.sh
+          kill $SERVER_PID || true
+
+  client:
+    name: Client (contract check)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify client pins os-core-common 3.1.0 API surface
+        # os-core-common is only on the OSDU community GitLab registry (not Maven
+        # Central); that registry was flaky during the OSDU->OpenDES migration, so
+        # this check is deliberately offline and deterministic.
+        run: bash examples/well360/client/check-client.sh

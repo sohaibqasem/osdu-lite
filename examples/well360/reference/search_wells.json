@@ -1,0 +1,11 @@
+{
+  "kind": "osdu:wks:master-data--Well:*",
+  "query": "data.FacilityName:\"FALCON-01\"",
+  "returnedFields": [
+    "id",
+    "kind",
+    "data.FacilityName",
+    "tags"
+  ],
+  "limit": 20
+}

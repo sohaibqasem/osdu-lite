@@ -1,0 +1,19 @@
+# Build artifacts
+client/target/
+*.class
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Runtime output (LAS downloads from the Java demo)
+client/downloads/
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# OS
+.DS_Store

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "company-prod:master-data--Wellbore:WB-1001-A",
+    "kind": "osdu:wks:master-data--Wellbore:1.4.0",
+    "acl": {
+      "viewers": [
+        "data.well360.viewers@company-prod.company.com"
+      ],
+      "owners": [
+        "data.well360.owners@company-prod.company.com"
+      ]
+    },
+    "legal": {
+      "legaltags": [
+        "<approved-legal-tag-name>"
+      ],
+      "otherRelevantDataCountries": [
+        "SA"
+      ]
+    },
+    "tags": {
+      "source-system": "legacy-well-db",
+      "legacy-id": "WB-1001-A"
+    },
+    "data": {
+      "FacilityName": "FALCON-01-A",
+      "WellID": "company-prod:master-data--Well:W-1001"
+    }
+  }
+]

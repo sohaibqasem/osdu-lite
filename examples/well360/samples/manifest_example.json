@@ -1,0 +1,62 @@
+{
+  "executionContext": {
+    "acl": {
+      "viewers": [
+        "data.well360.viewers@company-prod.company.com"
+      ],
+      "owners": [
+        "data.well360.owners@company-prod.company.com"
+      ]
+    },
+    "legal": {
+      "legaltags": [
+        "company-prod-demo-legaltag"
+      ],
+      "otherRelevantDataCountries": [
+        "SA"
+      ]
+    },
+    "Payload": {
+      "AppKey": "well360-loader",
+      "data-partition-id": "company-prod"
+    },
+    "manifest": {
+      "kind": "osdu:wks:Manifest:1.0.0",
+      "MasterData": [
+        {
+          "id": "company-prod:master-data--Well:W-1001",
+          "kind": "osdu:wks:master-data--Well:1.4.0",
+          "data": {
+            "FacilityName": "EAGLE-01",
+            "FacilityDescription": "Fictional sample well for OSDU tutorial"
+          }
+        },
+        {
+          "id": "company-prod:master-data--Wellbore:WB-1001-A",
+          "kind": "osdu:wks:master-data--Wellbore:1.4.0",
+          "data": {
+            "FacilityName": "EAGLE-01-A",
+            "WellID": "company-prod:master-data--Well:W-1001"
+          }
+        }
+      ],
+      "ReferenceData": [],
+      "Data": {
+        "Datasets": [],
+        "WorkProductComponents": [
+          {
+            "id": "company-prod:work-product-component--WellLog:LOG-1001-GR",
+            "kind": "osdu:wks:work-product-component--WellLog:1.4.0",
+            "data": {
+              "Name": "EAGLE-01-A GR/CALI",
+              "WellboreID": "company-prod:master-data--Wellbore:WB-1001-A",
+              "Datasets": [
+                "company-prod:dataset--File.Generic:LOG-1001-GR-LAS"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

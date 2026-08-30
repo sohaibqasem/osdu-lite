@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+tests/
+.git
+.gitignore
+*.md
+*.bak
+# Ignore anything a live test/upload may have dropped into the files dir;
+# only the checked-in LAS samples ship in the image.
+files/f-[0-9]*.las
+files/*_test.las
+files/up-*.las

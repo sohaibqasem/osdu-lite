@@ -1,0 +1,31 @@
+[
+  {
+    "id": "company-prod:master-data--Well:W-1001",
+    "kind": "osdu:wks:master-data--Well:1.4.0",
+    "acl": {
+      "viewers": [
+        "data.well360.viewers@company-prod.company.com"
+      ],
+      "owners": [
+        "data.well360.owners@company-prod.company.com"
+      ]
+    },
+    "legal": {
+      "legaltags": [
+        "<approved-legal-tag-name>"
+      ],
+      "otherRelevantDataCountries": [
+        "SA"
+      ]
+    },
+    "tags": {
+      "source-system": "legacy-well-db",
+      "legacy-id": "W-1001",
+      "field": "Falcon Field"
+    },
+    "data": {
+      "FacilityName": "FALCON-01",
+      "FacilityDescription": "Fictional sample well for OSDU tutorial"
+    }
+  }
+]
